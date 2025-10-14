@@ -2,25 +2,27 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const handleShare = () => {
+  if (navigator.share) {
+    navigator.share({
+      title: "Check this out",
+      text: "I Found something awesome",
+      url: "https://bit.ly/join-hubpost"
+    });
+  } else {
+    alert("sharing not supported on this browser")
+  }
+};
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ return (
+  <>
+    <h1 className='text-5xl font-bold text-red-500 bg-yellow-200 '>
+      HUBPOST
+    </h1>
+    <button onClick={handleShare}>click to share</button>
+    </>
+  )
 }
 
 export default App;
