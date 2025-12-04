@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ContactUs from './components/ContactUs';
 
 const handleShare = () => {
   if (navigator.share) {
@@ -21,6 +22,7 @@ function App() {
       HUBPOST
     </h1>
     <button onClick={handleShare}>click to share</button>
+    <ContactUs />
     </>
   )
 }
